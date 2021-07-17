@@ -24,7 +24,7 @@
             android:fontFamily="serif"
             android:gravity="center"
             android:textSize="36sp"
-            android:textColor="#FF5722"/>
+            android:textColor="#FF6F22"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="50dp"

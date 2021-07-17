@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.hsalf.smilerating.SmileRating;
+import com.hsalf.smileyrating.SmileyRating;
 
 public class Smileyrating extends AppCompatActivity {
 
@@ -15,8 +16,31 @@ public class Smileyrating extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_smileyrating);
-        SmileRating smileRating = (SmileRating)findViewById(R.id.smile_rating);
-        smileRating.setOnSmileySelectionListener(new SmileRating.OnSmileySelectionListener() {
+        SmileyRating smileyRating = findViewById(R.id.smile_rating);
+        smileyRating.setSmileySelectedListener(new SmileyRating.OnSmileySelectedListener() {
+            @Override
+            public void onSmileySelected(SmileyRating.Type type) {
+                switch(type) {
+                    case BAD:
+                        Toast.makeText(Smileyrating.this, "Bad", Toast.LENGTH_SHORT).show();
+                        break;
+                    case GOOD:
+                        Toast.makeText(Smileyrating.this, "Good", Toast.LENGTH_SHORT).show();
+                        break;
+                    case GREAT:
+                        Toast.makeText(Smileyrating.this, "Great", Toast.LENGTH_SHORT).show();
+                        break;
+                    case OKAY:
+                        Toast.makeText(Smileyrating.this, "Okay", Toast.LENGTH_SHORT).show();
+                        break;
+                    case TERRIBLE:
+                        Toast.makeText(Smileyrating.this, "Terrible", Toast.LENGTH_SHORT).show();
+                        break;
+                }
+            }
+        });
+        /*SmileRating smileRating = (SmileRating)findViewById(R.id.smile_rating);
+        smileyRating.setOnSmileySelectionListener(new SmileRating.OnSmileySelectionListener() {
             @Override
             public void onSmileySelected(int smiley, boolean reselected) {
                 switch (smiley){
@@ -43,7 +67,7 @@ public class Smileyrating extends AppCompatActivity {
             public void onRatingSelected(int level, boolean reselected) {
                 Toast.makeText(Smileyrating.this, "Selected Rating", Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
 
 
     }

@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void scrn2(View view) {
-        Intent intent = new Intent(this, SmileRating.class);
+        Intent intent = new Intent(this, Smileyrating.class);
         startActivity(intent);
 
     }
